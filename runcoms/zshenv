@@ -9,3 +9,9 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export SMALL_SCREEN=80
+export MEDIUM_SCREEN=140
+export LARGE_SCREEN=200
+
+export OPENWEATHER_API_KEY=ac4226146cb8fa1d7e8ccaa049fcd086
