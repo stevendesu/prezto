@@ -165,3 +165,10 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+#
+# 256 Color Support
+#
+if test -n "$(tput colors)" && test $(tput colors) -ge 9; then
+    export TERM="screen-256color"
+fi
