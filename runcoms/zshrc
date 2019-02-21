@@ -15,3 +15,5 @@ weather() {
   curl wttr.in/$1
 }
 
+alias python=python3
+alias pip=pip3
