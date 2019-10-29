@@ -6,14 +6,17 @@
 #
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
+  source "$HOME/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-weather() {
-  curl wttr.in/$1
-}
+# Custom functions
+fpath=(
+  ~/.zfunc
+  $fpath
+)
+autoload ~/.zfunc/*
 
-alias python=python3
-alias pip=pip3
+# Alternate profiles
+emulate sh -c '. ~/.profile'
+emulate bash -c '. ~/.bash_profile'
