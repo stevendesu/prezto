@@ -58,7 +58,7 @@ function prompt_stevendesu_precmd {
 
   # Determine git clean / dirty status
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    if [[ $(git status --porcelain 2> /dev/null | wc -l) == 0 ]]; then
+    if [[ $(git status --porcelain 2> /dev/null | wc -l | awk '{$1=$1};1') == 0 ]]; then
       _prompt_stevendesu_git_dirty=" %F{2}#%f"
     else
       _prompt_stevendesu_git_dirty=" %F{1}#%f"
